@@ -1,7 +1,22 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import Root from './components/root';
+import configureStore from './store/store'
 
 document.addEventListener("DOMContentLoaded", () => {
+    let store;
+    if (window.currentUser) {
+        const preloadedState = {
+            session: { id: window.currentUser.id },
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser }
+            }
+        };
+        store = configureStore(preloadedState);
+        delete window.currentUser;
+    } else {
+        store = configureStore();
+    }
     const root = document.getElementById("root");
-    ReactDom.render(<img src="https://nick-2018.s3.amazonaws.com/logo.png" /> , root);
+    ReactDom.render(<Root store={store}/>, root);
 });
