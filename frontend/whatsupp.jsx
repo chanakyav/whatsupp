@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-// import myImage from 'images/logo.png';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
