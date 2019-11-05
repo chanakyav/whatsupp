@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
     attr_reader :password
 
-    validates :first_name, :last_name, :phone_number, :passwor_digest, :session_token, presence: true
+    validates :first_name, :last_name, :phone_number, :password_digest, :session_token, presence: true
     validates :phone_number, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
 
@@ -16,11 +16,11 @@ class User < ApplicationRecord
 
     def password=(password)
         @password = password
-        self.passwor_digest = BCrypt::Password.create(password)
+        self.password_digest = BCrypt::Password.create(password)
     end
 
     def is_password?(password)
-        BCrypt::Password.new(self.passwor_digest).is_password?(password)
+        BCrypt::Password.new(self.password_digest).is_password?(password)
     end
 
     def reset_session_token!
