@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+// import myImage from 'images/logo.png';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
-    ReactDom.render(<h1>WhatsUpp</h1>, root);
+    ReactDom.render(<img src="https://nick-2018.s3.amazonaws.com/logo.png" /> , root);
 });
