@@ -39,7 +39,6 @@ class SessionForm extends React.Component {
     renderUsername() {
         return (
             <div>
-                <br/>
                 <label>First Name:
                     <input type="text"
                         value={this.state.first_name}
@@ -58,7 +57,6 @@ class SessionForm extends React.Component {
     renderLogin() {
         return (
             <div>
-                <br/>
                 <label>Phone Number:
                             <input type="text"
                         value={this.state.phone_number}
@@ -99,6 +97,7 @@ class SessionForm extends React.Component {
                     <br />
                     Please {this.props.formType} or {this.props.navLink}
                     {this.renderErrors()}
+                    <br/>
                     {this.renderForm()}
                 </form>
             </div>
