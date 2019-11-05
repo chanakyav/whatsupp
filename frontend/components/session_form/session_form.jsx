@@ -36,34 +36,70 @@ class SessionForm extends React.Component {
         );
     }
 
+    renderUsername() {
+        return (
+            <div>
+                <br/>
+                <label>First Name:
+                    <input type="text"
+                        value={this.state.first_name}
+                        onChange={this.update('first_name')} />
+                </label>
+                <br/>
+                <label>Last Name:
+                    <input type="text"
+                        value={this.state.last_name}
+                        onChange={this.update('last_name')} />
+                </label>
+            </div>
+        )
+    }
+
+    renderLogin() {
+        return (
+            <div>
+                <br/>
+                <label>Phone Number:
+                            <input type="text"
+                        value={this.state.phone_number}
+                        onChange={this.update('phone_number')}
+                    />
+                </label>
+                <br/>
+                <label>Password:
+                    <input type="password"
+                        value={this.state.password}
+                        onChange={this.update('password')} />
+                </label>
+                <br/>
+                <input type="submit" value={this.props.formType} />
+            </div>
+        );
+    }
+
+    renderForm() {
+        if (this.props.formType === 'signup') {
+            return (
+                <div>
+                    {this.renderUsername()}
+                    {this.renderLogin()}
+                </div>
+            );
+        } 
+        return (
+            <div>{this.renderLogin()}</div>
+        );      
+    }
+
     render() {
         return (
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit} className="login-form-box">
+            <div>
+                <form onSubmit={this.handleSubmit}>
                     Welcome to WhatsUpp!
                     <br />
                     Please {this.props.formType} or {this.props.navLink}
                     {this.renderErrors()}
-                    <div className="login-form">
-                        <br />
-                        <label>Phone Number:
-                        <input type="text"
-                                value={this.state.phone_number}
-                                onChange={this.update('phone_number')}
-                                className="login-input"
-                            />
-                        </label>
-                        <br />
-                        <label>Password:
-                        <input type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                className="login-input"
-                            />
-                        </label>
-                        <br />
-                        <input className="session-submit" type="submit" value={this.props.formType} />
-                    </div>
+                    {this.renderForm()}
                 </form>
             </div>
         );
