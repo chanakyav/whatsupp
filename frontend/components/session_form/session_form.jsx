@@ -11,6 +11,8 @@ class SessionForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInputFocus = this.handleInputFocus.bind(this);
+        this.handleInputBlur = this.handleInputBlur.bind(this);
     }
 
     update(field) {
@@ -23,6 +25,15 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+    }
+
+    handleInputFocus(e) {
+        $(e.target).addClass("focus")
+    }
+
+    handleInputBlur(e) {
+        let ib = $(e.target);
+        if (ib.val() === "") ib.removeClass("focus");
     }
 
     renderErrors() {
@@ -41,19 +52,19 @@ class SessionForm extends React.Component {
         return (
             <div>
                 <div className="text-box">
-                    {/* <i className="user icon"></i> */}
                     <input type="text"
-                        placeholder="First Name"
                         value={this.state.first_name}
-                        onChange={this.update('first_name')} />
+                        onChange={this.update('first_name')}
+                        onFocus={this.handleInputFocus} 
+                        onBlur={this.handleInputBlur} />
                     <span data-placeholder="First Name"></span>
                 </div>
                 <div className="text-box">
-                    {/* <i className="user icon"></i> */}
                     <input type="text"
-                        placeholder="Last Name"
                         value={this.state.last_name}
-                        onChange={this.update('last_name')} />
+                        onChange={this.update('last_name')}
+                        onFocus={this.handleInputFocus} 
+                        onBlur={this.handleInputBlur}/>
                     <span data-placeholder="First Name"></span>
                 </div>
             </div>
@@ -64,19 +75,19 @@ class SessionForm extends React.Component {
         return (
             <div>
                 <div className="text-box">
-                    {/* <i className="phone icon"></i> */}
                     <input type="text"
-                        placeholder="Phone Number"
                         value={this.state.phone_number}
-                        onChange={this.update('phone_number')} />
+                        onChange={this.update('phone_number')}
+                        onFocus={this.handleInputFocus} 
+                        onBlur={this.handleInputBlur} />
                     <span data-placeholder="Phone Number"></span>
                 </div>
                 <div className="text-box">
-                    {/* <i className="lock icon"></i> */}
                     <input type="password"
-                        placeholder="Password"
                         value={this.state.password}
-                        onChange={this.update('password')} />
+                        onChange={this.update('password')}
+                        onFocus={this.handleInputFocus} 
+                        onBlur={this.handleInputBlur}/>
                     <span data-placeholder="Password"></span>
                 </div>
                 <input className="session-submit" type="submit" value={this.props.formType} />
@@ -88,28 +99,28 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'signup') {
             return (
                 <div>
+                    <h1>Create your account</h1>
                     {this.renderUsername()}
                     {this.renderLogin()}
                 </div>
             );
         } 
         return (
-            <div>{this.renderLogin()}</div>
+            <div>
+                <h1>Log in to WhatsUpp</h1>
+                {this.renderLogin()}
+            </div>
         );      
     }
 
     render() {
         return (
             <div className="login-box">
-                <p >Welcome to WhatsUpp!</p>
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    <br />
-                    <h1>{this.props.formType}</h1>
                     {/* Please {this.props.formType} or {this.props.navLink} */}
-                    {this.renderErrors()}
-                    <br/>
                     {this.renderForm()}
-                </form>
+                    {this.renderErrors()}
+                </form>     
             </div>
         );
     }
