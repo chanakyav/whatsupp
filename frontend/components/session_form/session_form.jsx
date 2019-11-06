@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -45,6 +46,7 @@ class SessionForm extends React.Component {
                         placeholder="First Name"
                         value={this.state.first_name}
                         onChange={this.update('first_name')} />
+                    <span data-placeholder="First Name"></span>
                 </div>
                 <div className="text-box">
                     {/* <i className="user icon"></i> */}
@@ -52,6 +54,7 @@ class SessionForm extends React.Component {
                         placeholder="Last Name"
                         value={this.state.last_name}
                         onChange={this.update('last_name')} />
+                    <span data-placeholder="First Name"></span>
                 </div>
             </div>
         )
@@ -66,6 +69,7 @@ class SessionForm extends React.Component {
                         placeholder="Phone Number"
                         value={this.state.phone_number}
                         onChange={this.update('phone_number')} />
+                    <span data-placeholder="Phone Number"></span>
                 </div>
                 <div className="text-box">
                     {/* <i className="lock icon"></i> */}
@@ -73,6 +77,7 @@ class SessionForm extends React.Component {
                         placeholder="Password"
                         value={this.state.password}
                         onChange={this.update('password')} />
+                    <span data-placeholder="Password"></span>
                 </div>
                 <input className="session-submit" type="submit" value={this.props.formType} />
             </div>
@@ -99,6 +104,7 @@ class SessionForm extends React.Component {
                 <p >Welcome to WhatsUpp!</p>
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <br />
+                    <h1>{this.props.formType}</h1>
                     {/* Please {this.props.formType} or {this.props.navLink} */}
                     {this.renderErrors()}
                     <br/>

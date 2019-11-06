@@ -21,13 +21,15 @@
 
 .login-form-box {
     // border: 1px solid black;
+    width: 70%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
+
 }
 
 .login-box p {
@@ -41,11 +43,13 @@
 }
 
 .text-box {
-   width: 100%;
+//    width: 100%;
    overflow: hidden;
-   font-size: 20px;
-   padding: 8px 0;
-   margin: 8px 0;
+   font-size: 18px;
+   padding: 8px 8px;
+   margin: 8px 8px;
+   border: 1px solid black;
+   border-radius: 3px;
 //    border-bottom: 1px solid #1ebea5;
 }
 
@@ -65,4 +69,10 @@
 
 .session-submit {
     text-transform: capitalize;
+    padding: 0;
+}
+
+.login-form-box h1 {
+    text-transform: capitalize;
+    text-align: center;
 }
