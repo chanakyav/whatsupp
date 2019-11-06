@@ -12,18 +12,32 @@ import SignupFormContainer from "./session_form/signup_form_container";
 import { AuthRoute } from '../util/route_util';
 
 const App = () => (
-    <div>
-        <header>
-            <Link to="/">
-                <img src="https://nick-2018.s3.amazonaws.com/logo.png" />
-                <h1>WhatsUpp</h1>
-            </Link>
-            <GreetingContainer />
-        </header>
-        <Switch>
-            <AuthRoute exact path="/login" component={LoginFormContainer}/>
-            <AuthRoute exact path="/signup" component={SignupFormContainer}/>
-        </Switch>
+    <div className="main-container">
+        <div className="header-wrapper">
+            <header className="main-nav">
+                <nav className="nav-left">
+                    <ul >
+                        <li>
+                            <Link className="nav-item" to="/">
+                                <img className="logo-img" src="https://nick-2018.s3.amazonaws.com/whatsupp-logo.png" />
+                            </Link>
+                        </li>
+                        <li>
+                            <Link className="nav-item logo" to="/">
+                                <span className="nav-btn">whatsupp web</span>
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
+                <GreetingContainer/>
+            </header>
+        </div>
+        <div className="content-container">
+            <Switch>
+                <AuthRoute exact path="/login" component={LoginFormContainer}/>
+                <AuthRoute exact path="/signup" component={SignupFormContainer}/>
+            </Switch>
+        </div>
     </div>
 );
 

@@ -1,20 +1,68 @@
-.login-form-container {
-   display: flex;
-   justify-content: center;
-   margin-top: 100px;
- }
+@import "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/icon.min.css";
 
- .login-form {
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
- }
 
-//  .login-input {
-//    margin-left: 20px;
-//  }
 
- .login-form-box {
-   outline: 1px solid black;
-   padding: 20px;
- }
+.login-box {
+    // margin : 100px 100px;
+    margin-top: 190px;
+    width: 550px;
+    height: 500px;
+    background: white;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    padding: 20px 20px;
+    -webkit-box-shadow: 0 0 20px #aaaaaa;
+    box-shadow: 0 0 20px #aaaaaa;
+    border-radius: 3px;
+}
+
+.login-form-box {
+    // border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box p {
+    color: #55636b;
+    float: center;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 200;
+    margin-bottom: 40px;
+    padding: 13px 13px;
+}
+
+.text-box {
+   width: 100%;
+   overflow: hidden;
+   font-size: 20px;
+   padding: 8px 0;
+   margin: 8px 0;
+//    border-bottom: 1px solid #1ebea5;
+}
+
+.text-box i {
+    width: 26px;
+    float: left;
+    text-align: center;
+}
+
+.text-box input {
+    border: 0.5px transparent black;
+    border-radius: 1px;
+    outline: none;
+    background: none;
+    color: black;
+}
+
+.session-submit {
+    text-transform: capitalize;
+}

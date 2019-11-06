@@ -1,51 +1,114 @@
 .main-container {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-    // line-height: 1.7em;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+.header-wrapper {
+    background: #1ebea5;
+    height: 220px;
+}
+
+.main-nav {
+    margin: 0 auto 28px;
+    margin-bottom: 66px;
+    width: 80%;
+    align-items: center;
+    display:flex;
+    flex: none;
+    justify-content: space-between;
+    min-height: 39px;
+    padding-top: 18px;
+    // padding-left: 36px;
+    // padding-right: 36px;
+}
+
+
+.nav-left > ul {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right > ul {
+    display: flex;
+    align-items: center;
 }
 
 li {
     list-style-type: none;
 }
 
+// .nav-left > ul > li {
+//     // margin-left: 20px;
+// }
+
+// .content-container {
+//     width: 100%;
+//     height: 85vh;
+//     background: rgb(232, 231, 231);
+// }
+
+// li {
+//     list-style-type: none;
+// }
+
 .nav-item {
     text-decoration: none;
     color: white;
     font-size: 15px;
-    font-weight: 500;
+    // font-weight: 600;
     width: 100%;
     padding: 10px 10px;
 }
 
-.nav-item:hover {
-    text-decoration: underline;
-    // border: 1px solid white;
-    // border-color: currentColor;
+
+.btnl:hover {
+    // text-decoration: underline;
+     border: 1px solid white;
+     border-color: currentColor;
+}
+
+.nav-btn {
+    font-size: 14px;
+    font-weight: 445;
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+    // padding: 5px 5px;
 }
 
 .logo {
     text-transform: uppercase;
+    margin: 10px 10px;
 }
 
 .logo:hover {
     text-decoration: none;
+    
 }
 
 .logo-img {
     width: 38px;
+    margin-left: 10px;
 }
 
-.navbar {
-    background: #1ebea5;
-    padding: 20px 20px;
-    display: flex;
-    align-items: center;
-}
-#nav-item-right {
-    float:right;
+
+
+p.nav-btn {
+    text-align: center;
+    padding: 10px 10px;
 }
 
-.submit-button {
-    color: white;
-    background-color: transparent;
-    border-color: currentColor;
-}
+// .navbar {
+//     background: #1ebea5;
+//     height: 15vh;
+//     padding: 20px 20px;
+//     display: flex;
+//     align-items: center;
+// }
+// #nav-item-right {
+//     float:right;
+// }
+
+// .submit-button {
+//     display: inline;
+//     text-align: center;
+// }
