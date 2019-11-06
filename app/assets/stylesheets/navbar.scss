@@ -10,35 +10,24 @@
     padding-top: 18px;
 }
 
-
-.nav-left > ul {
-    display: flex;
-    align-items: center;
-}
-
+.nav-left > ul,
 .nav-right > ul {
     display: flex;
     align-items: center;
-}
-
-li {
-    list-style-type: none;
 }
 
 .nav-item {
     text-decoration: none;
     color: white;
     font-size: 15px;
-    // font-weight: 600;
     width: 100%;
     padding: 10px 10px;
 }
 
 
 .btnl:hover {
-    // text-decoration: underline;
-     border: 1px solid white;
-     border-color: currentColor;
+    border: 1px solid white;
+    border-color: currentColor;
 }
 
 .nav-btn {
@@ -47,7 +36,6 @@ li {
     display: inline-block;
     line-height: normal;
     vertical-align: middle;
-    // padding: 5px 5px;
 }
 
 .logo {
@@ -64,7 +52,6 @@ li {
     width: 38px;
     margin-left: 10px;
 }
-
 
 p.nav-btn {
     text-align: center;
