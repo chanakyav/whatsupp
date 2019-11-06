@@ -1,9 +1,4 @@
-@import "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/icon.min.css";
-
-
-
 .login-box {
-    // margin : 100px 100px;
     margin-top: 190px;
     width: 550px;
     height: 500px;
@@ -20,7 +15,6 @@
 }
 
 .login-form-box {
-    // border: 1px solid black;
     width: 70%;
     position: absolute;
     top: 50%;
@@ -29,42 +23,51 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-
-}
-
-.login-box p {
-    color: #55636b;
-    float: center;
-    text-align: center;
-    font-size: 35px;
-    font-weight: 200;
-    margin-bottom: 40px;
-    padding: 13px 13px;
 }
 
 .text-box {
-//    width: 100%;
-   overflow: hidden;
-   font-size: 18px;
-   padding: 8px 8px;
-   margin: 8px 8px;
-   border: 1px solid black;
-   border-radius: 3px;
-//    border-bottom: 1px solid #1ebea5;
-}
-
-.text-box i {
-    width: 26px;
-    float: left;
-    text-align: center;
+    border-bottom: 2px solid #ddd;
+    position: relative;
+    margin: 30px 0;
 }
 
 .text-box input {
-    border: 0.5px transparent black;
-    border-radius: 1px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #333;
+    border: none;
+    width: 100%;
     outline: none;
     background: none;
-    color: black;
+    padding: 0 5px;
+    height: 40px;
+}
+
+.text-box span::before {
+    content: attr(data-placeholder);
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: .5s;
+}
+
+.text-box span::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    transition: .5s;
+}
+
+.focus + span::before {
+    top: -5px;
+}
+
+.focus + span::after {
+    width: 100%;
 }
 
 .session-submit {
@@ -75,4 +78,11 @@
 .login-form-box h1 {
     text-transform: capitalize;
     text-align: center;
+    color: #55636b;
+    float: center;
+    font-size: 35px;
+    font-weight: 200;
+    margin-bottom: 70px;
+    padding: 13px 13px;
+
 }
