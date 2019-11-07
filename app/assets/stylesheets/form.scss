@@ -28,15 +28,16 @@
 }
 
 .text-box {
-    border-bottom: 1px solid #1ebea5;
+    border-bottom: 1px solid #adadad;
     position: relative;
     margin: 30px 0;
 }
 
 .text-box input {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 400;
-    color: #333;
+    // color: #333;
+    color: #404040;
     border: none;
     width: 100%;
     outline: none;
@@ -51,6 +52,7 @@
     top: 50%;
     left: 5px;
     color: #c4c4c4;
+    font-size: 18px;
     transform: translateY(-50%);
     z-index: -1;
     transition: .5s;
@@ -61,11 +63,12 @@
     position: absolute;
     width: 0%;
     height: 2px;
+    background: linear-gradient(120deg, #1ebea5, #2ed573, #7bed9f);
     transition: .5s;
 }
 
 .focus + span::before {
-    top: -5px;
+    top: -6px;
 }
 
 .focus + span::after {
@@ -77,22 +80,24 @@
     justify-content: center;
 }
 
-.submit-btn:hover {
-    opacity: 0.85;
-}
-
 .submit-btn {
     text-transform: capitalize;
     padding: 0;
     color: white;
-    font-weight: 300;
+    font-weight: 400;
     display: flex;
-    width: 100px;
+    width: 100%;
     height: 50px;
     border: none;
-    background: #1ebea5;
+    background: linear-gradient(120deg, #1ebea5, #2ed573, #1ebea5);
+    background-size: 200%;
     justify-content: center;
     border-radius: 3px;
+}
+
+.submit-btn:hover {
+    background-position: right;
+    opacity: 0.9;
 }
 
 .login-form-box h1 {
@@ -100,9 +105,9 @@
     text-align: center;
     color: #55636b;
     float: center;
-    font-size: 32px;
+    font-size: 34px;
     font-weight: 300;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     padding: 13px 13px;
 }
 
@@ -113,7 +118,7 @@
 
 .form-option p {
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 300;
     margin-top: 15px;
 }
@@ -122,11 +127,15 @@
     color: #0070c9;
 }
 
+.form-option p span:hover {
+    text-decoration: underline;
+}
+
 .errors {
     display: flex;
     justify-content: center;
     border-radius: 3px;
-    color: #D8000C;
+    color: rgb(210, 45, 53);
     background-color: #FFD2D2;
 }
 
