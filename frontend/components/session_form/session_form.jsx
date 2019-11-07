@@ -69,7 +69,7 @@ class SessionForm extends React.Component {
                         onChange={this.update('last_name')}
                         onFocus={this.handleInputFocus} 
                         onBlur={this.handleInputBlur}/>
-                    <span data-placeholder="First Name"></span>
+                    <span data-placeholder="Last Name"></span>
                 </div>
             </div>
         )
@@ -106,7 +106,7 @@ class SessionForm extends React.Component {
             return (
                 <div className="form-option">
                     <h1>Create your account</h1>
-                    <p>Already have an account? <span>{this.props.navLink}</span></p>
+                    <p>Already have an account?  <span>{this.props.navLink}</span></p>
                     {this.renderUsername()}
                     {this.renderLogin()}
                 </div>
@@ -116,7 +116,7 @@ class SessionForm extends React.Component {
             <div className="form-option">
                 <h1>Login to WhatsUpp</h1>
                 {this.renderLogin()}
-                <p>Don't have an account? <span>{this.props.navLink}</span></p>
+                <p>Don't have an account?  <span>{this.props.navLink}</span></p>
             </div>
         );      
     }
@@ -125,7 +125,6 @@ class SessionForm extends React.Component {
         return (
             <div className="login-box">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    {/* Please {this.props.formType} or {this.props.navLink} */}
                     {this.renderForm()}
                     <br/>
                     {this.renderErrors()}
