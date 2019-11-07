@@ -1,3 +1,5 @@
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 .login-box {
     margin-top: 235px;
     width: 550px;
@@ -86,6 +88,7 @@
     border: none;
     background: #1ebea5;
     justify-content: center;
+    border-radius: 3px;
 }
 
 .login-form-box h1 {
@@ -97,4 +100,24 @@
     font-weight: 200;
     margin-bottom: 70px;
     padding: 13px 13px;
+}
+
+.errors {
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+    color: #D8000C;
+    background-color: #FFD2D2;
+}
+
+.errors li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.errors li:first-child {
+    padding-top: 10px;
+}
+.errors li:last-child {
+    padding-bottom: 10px ;
 }
