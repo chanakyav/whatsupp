@@ -15,6 +15,10 @@ class SessionForm extends React.Component {
         this.handleInputBlur = this.handleInputBlur.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.removeErrors();
+    }
+
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -90,7 +94,9 @@ class SessionForm extends React.Component {
                         onBlur={this.handleInputBlur}/>
                     <span data-placeholder="Password"></span>
                 </div>
-                <input className="session-submit" type="submit" value={this.props.formType} />
+                <div className="session-submit">
+                    <input className="submit-btn" type="submit" value={this.props.formType} />
+                </div>
             </div>
         );
     }
