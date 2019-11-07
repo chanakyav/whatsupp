@@ -8,9 +8,10 @@ import {
 } from 'react-router-dom';
 import LoginFormContainer from "./session_form/login_form_container";
 import SignupFormContainer from "./session_form/signup_form_container";
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Header from "./header/header";
 import Welcome from "./welcome/welcome";
+import Dashboard from "./dashboard/dashboard";
 
 const App = () => (
     <div className="main-container">
@@ -20,6 +21,7 @@ const App = () => (
                 <AuthRoute exact path="/" component={Welcome}/>
                 <AuthRoute exact path="/login" component={LoginFormContainer}/>
                 <AuthRoute exact path="/signup" component={SignupFormContainer}/>
+                <ProtectedRoute exact path="/dashboard" component={Dashboard}/>
             </Switch>
         </div>
     </div>
