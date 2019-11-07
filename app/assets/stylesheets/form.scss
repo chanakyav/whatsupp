@@ -1,9 +1,9 @@
 @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 .login-box {
-    margin-top: 235px;
+    margin-top: 258px;
     width: 550px;
-    height: 600px;
+    height: 650px;
     background: white;
     position: relative;
     top: 50%;
@@ -28,7 +28,7 @@
 }
 
 .text-box {
-    border-bottom: 2px solid #adadad;
+    border-bottom: 1px solid #1ebea5;
     position: relative;
     margin: 30px 0;
 }
@@ -50,7 +50,7 @@
     position: absolute;
     top: 50%;
     left: 5px;
-    color: #adadad;
+    color: #c4c4c4;
     transform: translateY(-50%);
     z-index: -1;
     transition: .5s;
@@ -77,6 +77,10 @@
     justify-content: center;
 }
 
+.submit-btn:hover {
+    opacity: 0.85;
+}
+
 .submit-btn {
     text-transform: capitalize;
     padding: 0;
@@ -96,10 +100,26 @@
     text-align: center;
     color: #55636b;
     float: center;
-    font-size: 35px;
-    font-weight: 200;
-    margin-bottom: 70px;
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 50px;
     padding: 13px 13px;
+}
+
+// .form-option {
+//     border: 1px solid #1ebea5;
+//     border-radius: 5px;
+// }
+
+.form-option p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 15px;
+}
+
+.form-option p span {
+    color: #0070c9;
 }
 
 .errors {

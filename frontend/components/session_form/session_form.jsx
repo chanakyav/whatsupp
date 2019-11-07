@@ -104,17 +104,19 @@ class SessionForm extends React.Component {
     renderForm() {
         if (this.props.formType === 'signup') {
             return (
-                <div>
+                <div className="form-option">
                     <h1>Create your account</h1>
+                    <p>Already have an account? <span>{this.props.navLink}</span></p>
                     {this.renderUsername()}
                     {this.renderLogin()}
                 </div>
             );
         } 
         return (
-            <div>
-                <h1>Log in to WhatsUpp</h1>
+            <div className="form-option">
+                <h1>Login to WhatsUpp</h1>
                 {this.renderLogin()}
+                <p>Don't have an account? <span>{this.props.navLink}</span></p>
             </div>
         );      
     }
