@@ -21,12 +21,19 @@
     color: white;
     width: 100%;
     padding: 10px 10px;
+    margin: 5px 5px;
 }
 
 
-.btnl:hover {
+.btnl {
     border: 1px solid white;
     border-color: currentColor;
+    border-radius: 3px;
+    opacity: 0.85;
+}
+
+.btnl:hover {
+    opacity: 1;
 }
 
 .nav-btn {
@@ -44,7 +51,6 @@
 
 .logo:hover {
     text-decoration: none;
-    
 }
 
 .logo-img {
@@ -54,5 +60,5 @@
 
 p.nav-btn {
     text-align: center;
-    padding: 10px 10px;
+    padding: 8px 5px;
 }
