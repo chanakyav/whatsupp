@@ -4,7 +4,9 @@ export default class ChatBox extends Component {
     render() {
         return (
             <div className="chatbox-container">
-                ChatBox
+                <div className="chatbox-header">
+                    <span>ChatBox</span>
+                </div>
             </div>
         )
     }
