@@ -9,10 +9,14 @@ export default class Profile extends Component {
         return (
             <div className="profile-container">
                 <div className="sidenav-header">
-                    Profile
+
+                    <span className="closebtn" onClick={() => this.closeNav()}>
+                        <i class="lni-arrow-left"></i>
+                    </span>
+                    <span>Profile</span>
+                    
                 </div>
                 <div>
-                    <span className="closebtn" onClick={() => this.closeNav()}> X</span>
                 </div>
             </div>
         )

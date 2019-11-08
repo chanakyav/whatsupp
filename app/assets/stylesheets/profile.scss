@@ -3,17 +3,20 @@
 .sidenav {
   height: auto;
   width: 0;
+  border-right: 1px solid rgb(225, 220, 220);
   position: relative;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
   overflow-x: hidden;
   transition: 0.3s;
 }
 
 .sidenav-header {
-    background-color: red;
+    background: linear-gradient(120deg, #1ebea5, #2ed573);
+    height: 112px;
+    display: flex;
+    align-items: center;
 }
 
 .sidenav span {
@@ -32,7 +35,7 @@
 .sidenav .closebtn {
   position: relative;
   top: 0;
-  color: red;
+  color: white;
   right: 25px;
   font-size: 36px;
 }
@@ -45,6 +48,14 @@
 .profile-container {
     height: 100%;
     border-bottom: 1px solid rgb(225, 220, 220);
-    background-color: rgb(244, 242, 242);
+}
+
+li {
+    list-style-type: none;
+}
+
+.sidenav-header span {
+    color: white;
+    font-size: 16px;
 }
 

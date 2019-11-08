@@ -6,7 +6,7 @@ import Contacts from '../contacts/contacts'
 export default class Dashboard extends Component {
 
     openNav() {
-        document.querySelector("#mySidenav").style.width = "250px";
+        document.querySelector("#mySidenav").style.width = "30%";
     }
 
     render() {
