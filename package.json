@@ -12,12 +12,11 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "webpack": "^4.41.2"
-  },
-  "devDependencies": {
+    "webpack": "^4.41.2",
     "redux-logger": "^3.0.6",
     "webpack-cli": "^3.3.10"
   },
+  "devDependencies": {},
   "description": "",
   "version": "1.0.0",
   "main": "index.js",
