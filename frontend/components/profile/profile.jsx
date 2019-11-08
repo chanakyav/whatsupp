@@ -4,6 +4,7 @@ export default class Profile extends Component {
 
     closeNav() {
         document.getElementById("mySidenav").style.width = "0";
+        // document.querySelector(".left-pane").style.width = "30%";
     }
     render() {
         return (
