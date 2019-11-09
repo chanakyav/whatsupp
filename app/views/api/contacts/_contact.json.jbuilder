@@ -1,1 +1,1 @@
-json.extract! contact, :id, :user_id, :contact_id
+json.extract! contact, :id, :first_name, :last_name, :phone_number
