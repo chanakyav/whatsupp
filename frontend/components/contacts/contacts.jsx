@@ -27,15 +27,13 @@ export default class Contacts extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const contact = {
+        this.props.addContact({
             contact: {
                 id: this.props.currentUser.id,
                 phone_number: this.state.phoneNumber
             }
-        }
-        
-        
-        
+        })
+        this.setState({phoneNumber: ''})
     }
     
     render() {
@@ -55,10 +53,11 @@ export default class Contacts extends Component {
                         <input type="submit" value="Add Contact"/>
                     </form>
                 </div>
-            {this.props.contacts.map(contact => 
-                <li key={contact.id}>
-                    {contact.first_name}
-                </li>)}
+                {this.props.contacts.map(contact => 
+                    <li key={contact.id}>
+                        {contact.first_name}
+                    </li>
+                )}
             </div>
         )
     }

@@ -11,8 +11,21 @@ function receiveContacts(contacts) {
     };
 }
 
+function receiveContact(contact) {
+    return {
+        type: RECEIVE_CONTACT,
+        contact
+    }
+}
+
 export const fetchContacts = userId => dispatch => (
     APIUtil.fetchContacts(userId).then(contacts => {
         dispatch(receiveContacts(contacts))
+    })
+);
+
+export const addContact = contact => dispatch => (
+    APIUtil.addContact(contact).then(contact => {
+        dispatch(receiveContact(contact))
     })
 );

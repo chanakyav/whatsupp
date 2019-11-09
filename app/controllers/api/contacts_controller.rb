@@ -16,7 +16,7 @@ class Api::ContactsController < ApplicationController
         end
         @contact = Contact.new({user_id: contact_params[:id], contact_id: user.id})
         if @contact.save
-            render json: @contact
+            render json: user
         else
             render json: @contact.errors.full_messages, status: 422
         end

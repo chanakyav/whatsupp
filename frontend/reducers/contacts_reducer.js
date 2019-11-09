@@ -9,6 +9,8 @@ const ContactsReducer = (oldState = {}, action) => {
     switch (action.type) {
         case RECEIVE_CONTACTS:
             return action.contacts;
+        case RECEIVE_CONTACT:
+            return Object.assign({}, oldState, {[action.contact.id]: action.contact});
         default:
             return oldState;
     }
