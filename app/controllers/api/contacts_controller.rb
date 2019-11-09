@@ -8,6 +8,20 @@ class Api::ContactsController < ApplicationController
         render :show
     end
 
+    def create
+        user = User.find_by_phone_number(contact_params[:phone_number])
+        unless user
+            render json: ['Phone number not found'], status: 404
+            return
+        end
+        @contact = Contact.new({user_id: contact_params[:id], contact_id: user.id})
+        if @contact.save
+            render json: @contact
+        else
+            render json: @contact.errors.full_messages, status: 422
+        end
+    end
+
     private
 
     def contact_params
