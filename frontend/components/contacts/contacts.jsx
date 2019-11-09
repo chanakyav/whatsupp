@@ -7,6 +7,7 @@ export default class Contacts extends Component {
         this.state = {
             phoneNumber: ''
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -23,6 +24,19 @@ export default class Contacts extends Component {
             [field]: e.currentTarget.value
         });
     }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const contact = {
+            contact: {
+                id: this.props.currentUser.id,
+                phone_number: this.state.phoneNumber
+            }
+        }
+        
+        
+        
+    }
     
     render() {
         return (
@@ -31,7 +45,7 @@ export default class Contacts extends Component {
                     <span id="open-btn" onClick={() => this.openNav()}>
                         <i className="far fa-user-circle"></i>
                     </span>
-                    <form className="contact-form">
+                    <form onSubmit={this.handleSubmit} className="contact-form">
                         <input 
                             type="text"
                             value={this.state.phoneNumber}
