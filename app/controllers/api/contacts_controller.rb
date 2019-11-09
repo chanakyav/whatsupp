@@ -27,6 +27,7 @@ class Api::ContactsController < ApplicationController
         user = User.find_by_phone_number(contact_params[:phone_number])
         contact = Contact.where(user_id: id, contact_id: user.id)
         contact.first.destroy
+        render json: user
     end
 
     private
