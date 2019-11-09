@@ -11,6 +11,42 @@
     align-items: center;
     background-color: #f7f6f6;
     height: 56px;
+    justify-content: space-between;
+}
+
+.contact-form input::placeholder {
+    color: #adadad;
+}
+
+.contact-form input[type=text] {
+    padding: 5px;
+    margin: 0 10px;
+    width: 130px;
+    border-bottom: 1px solid #adadad;
+    color: #404040;
+    font-size: 17px;
+    text-align: center;
+}
+
+// .contact-form input[type=text]:focus {
+//     content: '';
+//     position: absolute;
+//     width: 0%;
+//     height: 2px;
+//     background: linear-gradient(120deg, #1ebea5, #2ed573, #7bed9f);
+//     transition: .5s;
+// }
+
+.contact-form {
+    margin: 0 10px;
+}
+
+.contact-form input[type=submit] {
+    border: 1px solid #1ebea5;
+    border-radius: 3px;
+    color: #1ebea5;
+    padding: 5px 5px;
+    // color: #55636b;
 }
 
 .contacts-header span {
@@ -20,7 +56,7 @@
 }
 
 .fa-user-circle {
-    font-size: 36px;
+    font-size: 32px;
     color: #D3D3D3;
     margin: 10px 10px;
 }

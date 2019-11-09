@@ -12,7 +12,6 @@ export default class Dashboard extends Component {
                     <Profile/>
                 </div>
                 <div className="left-pane">
-                    
                     <ContactsContainer/>
                 </div>
                 <ChatBox/>
