@@ -22,6 +22,13 @@ class Api::ContactsController < ApplicationController
         end
     end
 
+    def destroy
+        id = params[:id]
+        user = User.find_by_phone_number(contact_params[:phone_number])
+        contact = Contact.where(user_id: id, contact_id: user.id)
+        contact.first.destroy
+    end
+
     private
 
     def contact_params
