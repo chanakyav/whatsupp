@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 
 export default class Contacts extends Component {
+
+    componentDidMount() {
+        this.props.fetchContacts(this.props.currentUser.id)
+    }
+
     openNav() {
         document.querySelector("#mySidenav").style.width = "30%";
         // document.querySelector(".left-pane").style.width = "0";
@@ -15,6 +20,10 @@ export default class Contacts extends Component {
                     </span>
                     {/* <span>Contacts</span> */}
                 </div>
+            {this.props.contacts.map(contact => 
+                <li key={contact.id}>
+                    {contact.first_name}
+                </li>)}
             </div>
         )
     }
