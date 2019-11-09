@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { ContactItem } from './contact_item';
 
 export default class Contacts extends Component {
 
@@ -54,9 +55,10 @@ export default class Contacts extends Component {
                     </form>
                 </div>
                 {this.props.contacts.map(contact => 
-                    <li key={contact.id}>
-                        {contact.first_name}
-                    </li>
+                    <ContactItem 
+                        key={contact.id}
+                        contact={contact}
+                        deleteContact={this.props.deleteContact}/>
                 )}
             </div>
         )
