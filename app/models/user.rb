@@ -8,6 +8,11 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
+    has_many :contacts,
+        class_name: :Contact,
+        foreign_key: :user_id,
+        primary_key: :id
+
     def self.find_by_credentials(phone_number, password)
         user = User.find_by(phone_number: phone_number)
         return nil unless user
