@@ -13,11 +13,11 @@ export function addContact(contact) {
     });
 }
 
-export function deleteContact(userId, phoneNumber) {
+export function deleteContact(contactData) {
     return $.ajax({
         method: "DELETE",
-        url: `api/contacts/${userId}`,
-        data: {contact:{phone_number: phoneNumber}}
+        url: `api/contacts/${contactData.contact.userId}`,
+        data: {contact:{phone_number: contactData.contact.phoneNumber}}
     });
 }
 

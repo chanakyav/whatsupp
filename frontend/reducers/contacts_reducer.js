@@ -11,6 +11,10 @@ const ContactsReducer = (oldState = {}, action) => {
             return action.contacts;
         case RECEIVE_CONTACT:
             return Object.assign({}, oldState, {[action.contact.id]: action.contact});
+        case REMOVE_CONTACT:
+            let nextState = Object.assign({}, oldState)
+            delete nextState[action.contactsId]
+            return nextState;
         default:
             return oldState;
     }

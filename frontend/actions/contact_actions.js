@@ -18,6 +18,13 @@ function receiveContact(contact) {
     }
 }
 
+function removeContact(contactsId) {
+    return {
+        type: REMOVE_CONTACT,
+        contactsId
+    }
+}
+
 export const fetchContacts = userId => dispatch => (
     APIUtil.fetchContacts(userId).then(contacts => {
         dispatch(receiveContacts(contacts))
@@ -27,5 +34,11 @@ export const fetchContacts = userId => dispatch => (
 export const addContact = contact => dispatch => (
     APIUtil.addContact(contact).then(contact => {
         dispatch(receiveContact(contact))
+    })
+);
+
+export const deleteContact = contactData => dispatch => (
+    APIUtil.deleteContact(contactData).then(user => {
+        dispatch(removeContact(user.id))
     })
 );
