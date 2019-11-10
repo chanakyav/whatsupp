@@ -14,9 +14,10 @@
 
 .sidenav-header {
     background: linear-gradient(120deg, #1ebea5, #2ed573);
-    height: 56px;
+    height: 112px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    // border-bottom: 1px solid linear-gradient(120deg, #1ebea5, #2ed573);
 }
 
 // .sidenav span {
@@ -55,7 +56,11 @@
     color: white;
     font-size: 25px;
     font-weight: 300;
-    margin: 0 10px;
+    margin: 10px 10px;
+}
+
+.fa-arrow-left {
+  margin: 12px 0;
 }
 
 .profile-picture {
@@ -76,6 +81,7 @@
   font-size: 14px;
   text-align: center;
   margin-top: 5px;
+  color: #767575;
 }
 
 

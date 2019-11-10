@@ -9,7 +9,6 @@ export default class Profile extends Component {
     render() {
         return (
             <div className="profile-container">
-                <div className="sidenav-header"></div>
                 <div className="sidenav-header">
                     <button id="closebtn" onClick={() => this.closeNav()}>
                         <i className="fas fa-arrow-left"></i>
