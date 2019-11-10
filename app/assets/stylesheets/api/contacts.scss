@@ -15,7 +15,9 @@
 }
 
 .contact-form input::placeholder {
-    color: #adadad;
+    color: #c4c1c1;
+    font-weight: 300;
+    font-size: 17px;
 }
 
 .contact-form input[type=text] {
@@ -90,6 +92,7 @@
     justify-content: flex-start;
     height: 70px;
     overflow: hidden;
+    border-bottom: 1px solid #e8e7e7;
 }
 
 .contact-item:hover {
@@ -97,22 +100,24 @@
 }
 
 .contact-item ul {
-    width: 305px;
+    // width: 305px;
+    width: 100%;
     align-items: center;
     padding: 10px 10px;
 }
 
 .contact-item li {
-    padding-top: 2px;
-    padding-bottom: 1px;
+    padding-top:3px;
+    padding-bottom: 2px;
 }
 
 .contact-user-icon {
-    margin-top: 1px;
+    margin-top: 3px;
 }
 
 .user-icon {
     font-size: 45px;
+    color: #cdcdcd;
 }
 
 // Delete contact button
@@ -120,12 +125,11 @@
 .contact-info {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #e8e7e7;
 }
 
 .contact-delete-btn {
     padding-top: 18px;
-    margin-right: 10px;
+    margin-left: 20px;
 }
 
 .contact-delete-btn button {
@@ -134,15 +138,16 @@
     padding: 7px 7px;
     color: rgb(230, 55, 55);
     opacity: 0.8;
+    display: none;
 }
 
 .contact-delete-btn button:hover {
     opacity: 1;
 }
 
-// .contact-item:hover + .contact-delete-btn {
-//     display: block;
-// }
+.contact-item:hover button {
+    display: block;
+}
 
 #full-name {
     font-size: 17px;

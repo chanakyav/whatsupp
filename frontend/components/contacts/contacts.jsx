@@ -50,7 +50,7 @@ export default class Contacts extends Component {
                             value={this.state.phoneNumber}
                             placeholder="Phone Number"
                             onChange={this.update('phoneNumber')}/>
-                        {/* <span data-placeholder="Phone"></span> */}
+                        <span data-placeholder="phone-number"></span>
                         <input type="submit" value="Add Contact"/>
                     </form>
                 </div>
