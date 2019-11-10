@@ -1,6 +1,13 @@
 import React from 'react'
 
-export const ContactItem = ({contact, deleteContact}) => {
+export const ContactItem = ({contact, deleteContact, currentUserId}) => {
+
+    const contactData = {
+        contact: {
+            userId: currentUserId,
+            phoneNumber: contact.phone_number
+        }
+    };
 
     return (
         <div className="contact-item">
@@ -13,7 +20,7 @@ export const ContactItem = ({contact, deleteContact}) => {
                     <li id="phone-number">{contact.phone_number}</li>
                 </ul>
                 <div className="contact-delete-btn">
-                    <button onClick={() => deleteContact(con)}>Delete</button>
+                    <button onClick={() => deleteContact(contactData)}>Delete</button>
                 </div>
             </div>
         </div>

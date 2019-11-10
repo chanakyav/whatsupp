@@ -61,7 +61,8 @@ export default class Contacts extends Component {
                     <ContactItem 
                         key={contact.id}
                         contact={contact}
-                        deleteContact={this.props.deleteContact}/>
+                        deleteContact={this.props.deleteContact}
+                        currentUserId={this.props.currentUser.id}/>
                 )}
             </div>
         )

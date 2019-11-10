@@ -93,7 +93,7 @@
 }
 
 .contact-item:hover {
-    background-color: #f2f1f1;
+    background-color: #eeeeee;
 }
 
 .contact-item ul {
@@ -107,8 +107,9 @@
     padding-bottom: 1px;
 }
 
-// .contact-user-icon {
-// }
+.contact-user-icon {
+    margin-top: 1px;
+}
 
 .user-icon {
     font-size: 45px;
@@ -133,6 +134,10 @@
     padding: 7px 7px;
     color: rgb(230, 55, 55);
     opacity: 0.8;
+}
+
+.contact-delete-btn button:hover {
+    opacity: 1;
 }
 
 // .contact-item:hover + .contact-delete-btn {
