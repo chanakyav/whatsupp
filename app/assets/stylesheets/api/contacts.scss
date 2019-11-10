@@ -88,4 +88,63 @@
 .contact-item {
     display: flex;
     justify-content: flex-start;
+    height: 70px;
+    overflow: hidden;
+}
+
+.contact-item:hover {
+    background-color: #f2f1f1;
+}
+
+.contact-item ul {
+    width: 305px;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.contact-item li {
+    padding-top: 2px;
+    padding-bottom: 1px;
+}
+
+// .contact-user-icon {
+// }
+
+.user-icon {
+    font-size: 45px;
+}
+
+// Delete contact button
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e8e7e7;
+}
+
+.contact-delete-btn {
+    padding-top: 18px;
+    margin-right: 10px;
+}
+
+.contact-delete-btn button {
+    border: 1px solid rgb(230, 55, 55);
+    border-radius: 3px;
+    padding: 7px 7px;
+    color: rgb(230, 55, 55);
+    opacity: 0.8;
+}
+
+// .contact-item:hover + .contact-delete-btn {
+//     display: block;
+// }
+
+#full-name {
+    font-size: 17px;
+    font-weight: 500;
+    color: #404040;
+}
+
+#phone-number {
+    color: #55636b;
 }
