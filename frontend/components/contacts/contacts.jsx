@@ -54,6 +54,9 @@ export default class Contacts extends Component {
                         <input type="submit" value="Add Contact"/>
                     </form>
                 </div>
+                <div className="contacts-heading">
+                    <span>Contacts</span>
+                </div>
                 {this.props.contacts.map(contact => 
                     <ContactItem 
                         key={contact.id}

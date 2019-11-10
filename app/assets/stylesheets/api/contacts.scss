@@ -64,3 +64,28 @@
     color: #D3D3D3;
     margin: 10px 10px;
 }
+
+// Contacts heading
+
+.contacts-heading {
+    display: flex;
+    align-items: center;
+    background-color: #f7f6f6;
+    height: 56px;
+    justify-content: space-between;
+    border-top: 1px solid rgb(225, 220, 220);
+}
+
+.contacts-heading span  {
+    font-size: 25px;
+    font-weight: 300;
+    color: #55636b;
+    margin: 0 20px;
+}
+
+// Contact items
+
+.contact-item {
+    display: flex;
+    justify-content: flex-start;
+}
