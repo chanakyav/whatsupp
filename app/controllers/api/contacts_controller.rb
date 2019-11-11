@@ -1,6 +1,6 @@
 class Api::ContactsController < ApplicationController
 
-    # before_action :require_logged_in, only: [:create, :index, :destroy]
+    before_action :require_logged_in, only: [:create, :show, :destroy]
 
     def show
         contact_ids = User.find(params[:id]).contacts.pluck(:contact_id)
