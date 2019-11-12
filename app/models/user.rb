@@ -12,6 +12,8 @@ class User < ApplicationRecord
         class_name: :Contact,
         foreign_key: :user_id,
         primary_key: :id
+    
+    has_many :messages
 
     def self.find_by_credentials(phone_number, password)
         user = User.find_by(phone_number: phone_number)
