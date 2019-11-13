@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ContactItem } from './contact_item';
+import ContactItem from './contact_item';
 
 export default class Contacts extends Component {
 
@@ -12,7 +12,8 @@ export default class Contacts extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchContacts(this.props.currentUser.id)
+        this.props.fetchContacts(this.props.currentUser.id);
+        this.props.fetchRooms(this.props.currentUser.id)
     }
 
     openNav() {
@@ -62,7 +63,10 @@ export default class Contacts extends Component {
                         key={contact.id}
                         contact={contact}
                         deleteContact={this.props.deleteContact}
-                        currentUserId={this.props.currentUser.id}/>
+                        currentUser={this.props.currentUser}
+                        addRoom={this.props.addRoom}
+                        rooms={this.props.rooms}
+                    />
                 )}
             </div>
         )
