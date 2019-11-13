@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Messages from './messages';
+import MessageInputContainer from './message_input_container';
 
 export default class ChatBox extends Component {
     componentDidMount() { 
@@ -15,10 +16,7 @@ export default class ChatBox extends Component {
                     <Messages messages={this.props.messages} activeRoom={this.props.activeRoom}/>
                 </div>
                 <div className="message-input">
-                    <input 
-                        type="text" 
-                        placeholder="Type a message"
-                    />
+                    <MessageInputContainer/>
                 </div>
             </div>
         )
