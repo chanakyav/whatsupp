@@ -1,6 +1,7 @@
 class Api::MessagesController < ApplicationController
     def show
-        @messages = User.find(params[:id]).messages
+        room_ids = Chat.where(user_id: params[:id]).pluck(:room_id)
+        @messages = Message.where(:room_id => room_ids)
         render :show
     end
 
