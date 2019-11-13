@@ -7,9 +7,7 @@ export default class ContactItem extends Component {
         let room = this.checkRoom(this.props.rooms);
         this.state = {
             room: room
-        };
-        console.log(this.state.room);
-        
+        };       
         this.handleChat = this.handleChat.bind(this);
     }
 

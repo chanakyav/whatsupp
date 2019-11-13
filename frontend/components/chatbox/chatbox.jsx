@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
+import Messages from './messages';
 
 export default class ChatBox extends Component {
+    componentDidMount() { 
+        this.props.fetchMessages(this.props.currentUser.id)
+    }
     render() {
         return (
             <div className="chatbox-container">
@@ -8,7 +12,7 @@ export default class ChatBox extends Component {
                     <span>ChatBox</span>
                 </div>
                 <div className="message-box">
-                    Messages
+                    <Messages messages={this.props.messages} activeRoom={this.props.activeRoom}/>
                 </div>
                 <div className="message-input">
                     <input 

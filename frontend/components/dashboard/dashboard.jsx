@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Profile from '../profile/profile'
-import ChatBox from '../chatbox/chatbox'
-import Contacts from '../contacts/contacts'
+import ChatBoxContainer from '../chatbox/chatbox_container';
 import ContactsContainer from '../contacts/contacts_container'
 
 export default class Dashboard extends Component {
@@ -14,7 +13,7 @@ export default class Dashboard extends Component {
                 <div className="left-pane">
                     <ContactsContainer/>
                 </div>
-                <ChatBox/>
+                <ChatBoxContainer/>
             </div>
         )
     }
