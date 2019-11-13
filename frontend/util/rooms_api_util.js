@@ -11,3 +11,9 @@ export function addRoom(roomData) {
         data: {room: roomData}
     });
 }
+
+export function fetchRoom(phoneNumber) {
+    return $.ajax({
+        url: `api/room/${phoneNumber}`
+    });
+}
