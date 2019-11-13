@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { fetchContacts, addContact, deleteContact } from "../../actions/contact_actions";
-import { fetchRooms, addRoom } from "../../actions/room_actions"
+import { fetchRooms, addRoom } from "../../actions/room_actions";
+import { activeRoom } from "../../actions/active_room_actions";
 import Contacts from './contacts'
 
 const mapStateToProps = ({ session, entities: { users, contacts, rooms } }) => ({
@@ -14,7 +15,8 @@ const mapDispatchToProps = dispatch => ({
     addContact: contact => dispatch(addContact(contact)),
     deleteContact: contactData => dispatch(deleteContact(contactData)),
     fetchRooms: userId => dispatch(fetchRooms(userId)),
-    addRoom: room => dispatch(addRoom(room))
+    addRoom: room => dispatch(addRoom(room)),
+    activeRoom: room => dispatch(activeRoom(room))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contacts);

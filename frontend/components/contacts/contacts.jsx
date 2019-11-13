@@ -66,6 +66,7 @@ export default class Contacts extends Component {
                         currentUser={this.props.currentUser}
                         addRoom={this.props.addRoom}
                         rooms={this.props.rooms}
+                        activeRoom={this.props.activeRoom}
                     />
                 )}
             </div>
