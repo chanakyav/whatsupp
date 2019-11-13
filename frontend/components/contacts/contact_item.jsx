@@ -33,6 +33,7 @@ export default class ContactItem extends Component {
             this.props.addRoom(room);            
             this.setState({room: phone_numbers});
             this.props.activeRoom(phone_numbers);
+            this.props.activeContact(this.props.contact)
         }
     }
 
