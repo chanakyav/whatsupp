@@ -8,6 +8,11 @@ class Api::RoomsController < ApplicationController
         render :show
     end
 
+    def roomId
+        @room = Room.find_by_name(params[:name])
+        render 'roomId'
+    end
+
     def create
         user1 = User.find(room_params[:user1_id])
         user2 = User.find_by_phone_number(room_params[:user2_phone_number])
@@ -26,6 +31,6 @@ class Api::RoomsController < ApplicationController
 
     def room_params 
         p params
-        params.require(:room).permit(:user1_id, :user2_phone_number)
+        params.require(:room).permit(:user1_id, :user2_phone_number, :name)
     end
 end

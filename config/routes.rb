@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resources :contacts, only: [:create, :show, :destroy]
     resources :rooms, only: [:create, :show, :destroy]
+    get 'room/:name', to: 'rooms#roomId' 
     resources :messages, only: [:create, :show]
     resource :session, only: [:create, :destroy]
   end
