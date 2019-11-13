@@ -1,4 +1,7 @@
 class Api::MessagesController < ApplicationController
+
+    before_action :require_logged_in, only: [:create, :show]
+
     def show
         room_ids = Chat.where(user_id: params[:id]).pluck(:room_id)
         @messages = Message.where(:room_id => room_ids)

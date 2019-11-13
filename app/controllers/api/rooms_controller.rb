@@ -1,4 +1,7 @@
 class Api::RoomsController < ApplicationController
+
+    before_action :require_logged_in, only: [:create, :show, :destroy]
+
     def show
         room_ids = Chat.where(user_id: params[:id]).pluck(:room_id)
         @rooms = Room.where(:id => room_ids)
