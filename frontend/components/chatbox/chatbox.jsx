@@ -7,6 +7,15 @@ export default class ChatBox extends Component {
                 <div className="chatbox-header">
                     <span>ChatBox</span>
                 </div>
+                <div className="message-box">
+                    Messages
+                </div>
+                <div className="message-input">
+                    <input 
+                        type="text" 
+                        placeholder="Type a message"
+                    />
+                </div>
             </div>
         )
     }
