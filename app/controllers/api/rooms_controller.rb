@@ -13,7 +13,7 @@ class Api::RoomsController < ApplicationController
         if @room.save
             Chat.create(room_id: @room.id, user_id: user1.id)
             Chat.create(room_id: @room.id, user_id: user2.id)
-            render json: @room
+            render 'createdRoom'
         else
             render json: @room.errors.full_messages, status: 422
         end
