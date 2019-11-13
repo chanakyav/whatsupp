@@ -23,6 +23,7 @@ export default class ContactItem extends Component {
     handleChat(e) {
         if (this.state.room.length) {
             this.props.activeRoom(this.state.room);
+            this.props.activeContact(this.props.contact);
         } else {
             let phone_numbers = [this.props.currentUser.phone_number, 
                 this.props.contact.phone_number].sort().join('-');
@@ -33,7 +34,7 @@ export default class ContactItem extends Component {
             this.props.addRoom(room);            
             this.setState({room: phone_numbers});
             this.props.activeRoom(phone_numbers);
-            this.props.activeContact(this.props.contact)
+            this.props.activeContact(this.props.contact);
         }
     }
 
