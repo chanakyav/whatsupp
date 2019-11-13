@@ -1,0 +1,1 @@
+json.extract! message, :id, :room_id, :user_id, :message
