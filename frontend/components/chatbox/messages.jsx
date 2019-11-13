@@ -13,16 +13,23 @@ export default class Messages extends Component {
         return messages;
     }
 
+    classifyMessage(message) {
+        return (
+            <li 
+            key={message.id}
+            className={this.props.currentUser.id === message.user_id ? "sender": "recipient"}
+            >
+            {message.message}
+            </li>
+        );
+    }
+
     render() {
         const messages = this.getRoomMessages();
         return (
             <div>
                 <ul>
-                    {messages.map(message => 
-                        <li key={message.id}>
-                            {message.message}
-                        </li>
-                    )}
+                    {messages.map(message => this.classifyMessage(message))}
                 </ul>
             </div>
         )
