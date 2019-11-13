@@ -19,6 +19,9 @@ export const ContactItem = ({contact, deleteContact, currentUserId}) => {
                     <li id="full-name">{`${contact.first_name} ${contact.last_name}`}</li>
                     <li id="phone-number">{contact.phone_number}</li>
                 </ul>
+                <div className="contact-chat-btn">
+                    <button>Chat</button>
+                </div>
                 <div className="contact-delete-btn">
                     <button onClick={() => deleteContact(contactData)}>Delete</button>
                 </div>
