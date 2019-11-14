@@ -13,16 +13,12 @@ export default class Messages extends Component {
         return messages;
     }
 
-    scrollToBottom() {
-        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
-    }
-
     componentDidMount() {
-        this.scrollToBottom();
+        this.messagesEnd.scrollIntoView();
     }
 
-    componentDidUpdate() {
-        this.scrollToBottom();
+    componentDidUpdate() {   
+        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
     }
 
     classifyMessage(message) {
@@ -40,7 +36,7 @@ export default class Messages extends Component {
     render() {
         const messages = this.getRoomMessages();
         return (
-            <div>
+            <div >
                 <div className="message-list">
                     <ul>
                         {messages.map(message => this.classifyMessage(message))}
