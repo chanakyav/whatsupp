@@ -10,8 +10,12 @@ class Api::MessagesController < ApplicationController
 
     def create
         @message = Message.new(message_params)
+        room = Room.find(@message.room_id)
         if @message.save
-            render json: @message
+            # render json: @message
+            # RoomChannel.broadcast_to room, @message
+            ActionCable.server.broadcast 'room_channel', @message
+            head :ok
         else
             render json: @message.errors.full_messages, status: 422
         end

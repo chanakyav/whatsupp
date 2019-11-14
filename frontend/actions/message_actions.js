@@ -2,6 +2,7 @@ import * as APIUtil from '../util/messages_api_util';
 
 export const RECEIVE_MESSAGES = "RECEIVE_MESSAGES";
 export const RECEIVE_MESSAGE = "RECEIVE_MESSAGE";
+export const ADD_MESSAGE = "ADD_MESSAGE";
 
 function receiveMessages(messages) {
     return {
@@ -28,3 +29,10 @@ export const createMessage = message => dispatch => {
         dispatch(receiveMessage(message))
     })
 };
+
+export function addMessage(message) {
+    return {
+        type: ADD_MESSAGE,
+        message
+    }
+}

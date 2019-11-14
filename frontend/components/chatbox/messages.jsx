@@ -1,6 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { ActionCableConsumer } from 'react-actioncable-provider';
+// import { ActionCable } from 'actioncable';
 
 export default class Messages extends Component {
+
+    constructor(props) {
+        super(props);
+        this.handleReceived = this.handleReceived.bind(this);
+        this.state = {
+            newMessage: ''
+        };
+    }
 
     getRoomMessages() {
         let messages = [];
@@ -33,18 +43,28 @@ export default class Messages extends Component {
         );
     }
 
+    handleReceived(message) {
+        this.setState({newMessage: message.message})
+        this.props.addMessage(message);
+    }
+
     render() {
         const messages = this.getRoomMessages();
         return (
-            <div >
-                <div className="message-list">
-                    <ul>
-                        {messages.map(message => this.classifyMessage(message))}
-                    </ul>
-                </div>
-                <div style={{ float: "left", clear: "both" }}
-                    ref={(el) => { this.messagesEnd = el }}>
-                </div>
+            <div>
+                <ActionCableConsumer 
+                    channel={{channel: 'RoomChannel'}}
+                    onReceived={this.handleReceived}    
+                >
+                    <div className="message-list">
+                        <ul>
+                            {messages.map(message => this.classifyMessage(message))}
+                        </ul>
+                    </div>
+                    <div style={{ float: "left", clear: "both" }}
+                        ref={(el) => { this.messagesEnd = el }}>
+                    </div>
+                </ActionCableConsumer>
             </div>
         )
     }

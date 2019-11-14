@@ -1,5 +1,6 @@
 import {connect} from "react-redux";
 import {fetchMessages} from '../../actions/message_actions';
+import { addMessage } from "../../actions/message_actions";
 import ChatBox from './chatbox';
 
 const mapStateToProps = ({session, activeRoom, activeContact, entities: {users, messages}}) => ({
@@ -10,7 +11,8 @@ const mapStateToProps = ({session, activeRoom, activeContact, entities: {users, 
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchMessages: userId => dispatch(fetchMessages(userId))
+    fetchMessages: userId => dispatch(fetchMessages(userId)),
+    addMessage: message => dispatch(addMessage(message))
 });
 
 export default connect( mapStateToProps, mapDispatchToProps )(ChatBox);

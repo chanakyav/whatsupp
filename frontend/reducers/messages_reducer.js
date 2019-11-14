@@ -1,6 +1,7 @@
 import {
     RECEIVE_MESSAGES,
-    RECEIVE_MESSAGE
+    RECEIVE_MESSAGE,
+    ADD_MESSAGE
 } from '../actions/message_actions';
 
 const MessagesReducer = (oldState = {}, action) => {
@@ -9,6 +10,8 @@ const MessagesReducer = (oldState = {}, action) => {
         case RECEIVE_MESSAGES:
             return action.messages;
         case RECEIVE_MESSAGE:
+            return Object.assign({}, oldState, {[action.message.id]: action.message})
+        case ADD_MESSAGE:
             return Object.assign({}, oldState, {[action.message.id]: action.message})
         default:
             return oldState;

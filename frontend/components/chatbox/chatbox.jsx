@@ -25,7 +25,8 @@ export default class ChatBox extends Component {
                     <Messages 
                         messages={this.props.messages}
                         activeRoom={this.props.activeRoom}
-                        currentUser={this.props.currentUser}/>
+                        currentUser={this.props.currentUser}
+                        addMessage={this.props.addMessage}/>
                 </div>
                 <div className="message-input">
                     <MessageInputContainer/>
