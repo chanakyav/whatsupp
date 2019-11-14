@@ -13,6 +13,18 @@ export default class Messages extends Component {
         return messages;
     }
 
+    scrollToBottom() {
+        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+    }
+
+    componentDidMount() {
+        this.scrollToBottom();
+    }
+
+    componentDidUpdate() {
+        this.scrollToBottom();
+    }
+
     classifyMessage(message) {
         let date = new Date(message.created_at)
         return (
@@ -28,10 +40,15 @@ export default class Messages extends Component {
     render() {
         const messages = this.getRoomMessages();
         return (
-            <div className="message-list">
-                <ul>
-                    {messages.map(message => this.classifyMessage(message))}
-                </ul>
+            <div>
+                <div className="message-list">
+                    <ul>
+                        {messages.map(message => this.classifyMessage(message))}
+                    </ul>
+                </div>
+                <div style={{ float: "left", clear: "both" }}
+                    ref={(el) => { this.messagesEnd = el }}>
+                </div>
             </div>
         )
     }
