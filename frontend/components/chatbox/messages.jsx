@@ -14,12 +14,13 @@ export default class Messages extends Component {
     }
 
     classifyMessage(message) {
+        let date = new Date(message.created_at)
         return (
             <li 
             key={message.id}
-            className={this.props.currentUser.id === message.user_id ? "sender": "recipient"}
-            >
-            {message.message}
+            className={this.props.currentUser.id === message.user_id ? "sender": "recipient"}>
+                <span className="timestamp">{date.toLocaleString()}</span>
+                <span className="message-text">{message.message}</span>
             </li>
         );
     }
@@ -27,7 +28,7 @@ export default class Messages extends Component {
     render() {
         const messages = this.getRoomMessages();
         return (
-            <div>
+            <div className="message-list">
                 <ul>
                     {messages.map(message => this.classifyMessage(message))}
                 </ul>

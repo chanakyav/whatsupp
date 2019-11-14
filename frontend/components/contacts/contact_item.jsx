@@ -4,9 +4,9 @@ export default class ContactItem extends Component {
 
     constructor(props) {
         super(props);
-        let room = this.checkRoom(this.props.rooms);
+        
         this.state = {
-            room: room
+            room: ""
         };       
         this.handleChat = this.handleChat.bind(this);
     }
@@ -20,8 +20,13 @@ export default class ContactItem extends Component {
         return '';
     }
 
+    componentDidMount() {
+        let room = this.checkRoom(this.props.rooms);
+        this.setState({room: room})
+    }
+
     handleChat(e) {
-        if (this.state.room.length) {
+        if (this.state.room != '') {
             this.props.activeRoom(this.state.room);
             this.props.activeContact(this.props.contact);
         } else {

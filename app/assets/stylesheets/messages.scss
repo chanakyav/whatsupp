@@ -1,0 +1,42 @@
+.message-box {
+    overflow: auto;
+}
+
+.message-list .sender {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.message-list .recipient {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.message-list ul li {
+    margin: 30px 60px;
+    // padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.sender span {
+    background-color: #DCF8C6;
+}
+
+.recipient span {
+    background-color: #FFFFFF;
+}
+
+.message-list span.message-text {
+    padding: 15px 15px;
+    border-radius: 10px;
+    max-width: 45%;
+}
+
+.message-list span.timestamp {
+    padding: 5px 15px;
+    border-radius: 10px;
+    color: rgb(130, 130, 130);
+    margin-bottom: 5px;
+}
