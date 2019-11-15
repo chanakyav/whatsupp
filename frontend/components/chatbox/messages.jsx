@@ -43,8 +43,6 @@ export default class Messages extends Component {
     }
 
     handleReceived(message) {        
-        console.log(message);
-        
         this.setState({newMessage: message.message})
         this.props.addMessage(message);
     }

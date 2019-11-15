@@ -29,7 +29,8 @@ export default class Profile extends Component {
                         <ul>
                             <li>Your Name</li>
                             <li id="edit-name">
-                                <input type="text" placeholder="Full Name"/>
+                                <input type="text" 
+                                    value={`${this.props.currentUser.first_name} ${this.props.currentUser.last_name}`}/>
                                 <i className="fas fa-pen"></i>
                             </li>
                         </ul>
