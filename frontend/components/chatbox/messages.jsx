@@ -43,6 +43,8 @@ export default class Messages extends Component {
     }
 
     handleReceived(message) {        
+        console.log(message);
+        
         this.setState({newMessage: message.message})
         this.props.addMessage(message);
     }
@@ -52,9 +54,10 @@ export default class Messages extends Component {
         return (
             <div>
                 <ActionCable
+                    key={this.props.activeRoom.id}
                     channel={{channel: 'RoomChannel', room_id: this.props.activeRoom.id}}
                     onReceived={this.handleReceived}    
-                >
+                />
                     <div className="message-list">
                         <ul>
                             {messages.map(message => this.classifyMessage(message))}
@@ -63,7 +66,6 @@ export default class Messages extends Component {
                     <div style={{ float: "left", clear: "both" }}
                         ref={(el) => { this.messagesEnd = el }}>
                     </div>
-                </ActionCable>
             </div>
         )
     }
