@@ -51,10 +51,10 @@ export default class Messages extends Component {
         const messages = this.getRoomMessages();
         return (
             <div>
-                {/* <ActionCableConsumer 
+                <ActionCable
                     channel={{channel: 'RoomChannel', room_id: this.props.activeRoom.id}}
                     onReceived={this.handleReceived}    
-                > */}
+                >
                     <div className="message-list">
                         <ul>
                             {messages.map(message => this.classifyMessage(message))}
@@ -63,7 +63,7 @@ export default class Messages extends Component {
                     <div style={{ float: "left", clear: "both" }}
                         ref={(el) => { this.messagesEnd = el }}>
                     </div>
-                {/* </ActionCableConsumer> */}
+                </ActionCable>
             </div>
         )
     }
