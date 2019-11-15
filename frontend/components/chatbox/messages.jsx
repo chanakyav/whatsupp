@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { ActionCableConsumer } from 'react-actioncable-provider';
-// import { ActionCable } from 'actioncable';
+// import { ActionCableConsumer } from 'react-actioncable-provider';
 
 export default class Messages extends Component {
 
@@ -52,10 +51,10 @@ export default class Messages extends Component {
         const messages = this.getRoomMessages();
         return (
             <div>
-                <ActionCableConsumer 
+                {/* <ActionCableConsumer 
                     channel={{channel: 'RoomChannel', room_id: this.props.activeRoom.id}}
                     onReceived={this.handleReceived}    
-                >
+                > */}
                     <div className="message-list">
                         <ul>
                             {messages.map(message => this.classifyMessage(message))}
@@ -64,7 +63,7 @@ export default class Messages extends Component {
                     <div style={{ float: "left", clear: "both" }}
                         ref={(el) => { this.messagesEnd = el }}>
                     </div>
-                </ActionCableConsumer>
+                {/* </ActionCableConsumer> */}
             </div>
         )
     }
