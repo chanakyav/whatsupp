@@ -8,7 +8,7 @@ import App from './App';
 const Root = ({ store }) => (
     <Provider store={store}>
         <HashRouter>
-            <ActionCableProvider url='ws://localhost:3000/cable'>
+            <ActionCableProvider url='wss://whatsupp-chat.herokuapp.com/cable'>
                 <App />
             </ActionCableProvider>
         </HashRouter>
