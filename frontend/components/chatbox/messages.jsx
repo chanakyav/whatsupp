@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { ActionCableConsumer } from 'react-actioncable-provider';
+import { ActionCable } from "react-actioncable-provider";
 
 export default class Messages extends Component {
 
