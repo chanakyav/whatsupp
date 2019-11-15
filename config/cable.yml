@@ -1,13 +1,13 @@
 development:
-  adapter: async
-  # adapter: redis
-  # url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  # channel_prefix: whatsupp_development
+  # adapter: async
+  adapter: redis
+  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  channel_prefix: whatsupp_development
 
 test:
   adapter: async
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  url: redis://redistogo:e03c430a0f4c7f031d63bdd52b45ff8f@barb.redistogo.com:9162/
   channel_prefix: whatsupp_production

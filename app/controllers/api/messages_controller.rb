@@ -13,8 +13,8 @@ class Api::MessagesController < ApplicationController
         room = Room.find(@message.room_id)
         if @message.save
             # render json: @message
-            # RoomChannel.broadcast_to room, @message
-            ActionCable.server.broadcast 'room_channel', @message
+            RoomChannel.broadcast_to room, @message
+            # ActionCable.server.broadcast 'room_channel', @message
             head :ok
         else
             render json: @message.errors.full_messages, status: 422

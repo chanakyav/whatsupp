@@ -28,7 +28,7 @@ export default class Messages extends Component {
     }
 
     componentDidUpdate() {   
-        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+        this.messagesEnd.scrollIntoView();
     }
 
     classifyMessage(message) {
@@ -44,6 +44,8 @@ export default class Messages extends Component {
     }
 
     handleReceived(message) {
+        console.log(message);
+        
         this.setState({newMessage: message.message})
         this.props.addMessage(message);
     }
@@ -53,7 +55,7 @@ export default class Messages extends Component {
         return (
             <div>
                 <ActionCableConsumer 
-                    channel={{channel: 'RoomChannel'}}
+                    channel={{channel: 'RoomChannel', room_id: this.props.activeRoom.id}}
                     onReceived={this.handleReceived}    
                 >
                     <div className="message-list">
