@@ -10,9 +10,11 @@ class SessionForm extends React.Component {
             phone_number: '',
             password: ''
         };
+        this.demo = {phoneNumber: '9988776655', password: 'password'};
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputFocus = this.handleInputFocus.bind(this);
         this.handleInputBlur = this.handleInputBlur.bind(this);
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
 
     componentWillUnmount() {
@@ -101,6 +103,15 @@ class SessionForm extends React.Component {
         );
     }
 
+    handleDemoLogin(e) {
+        e.preventDefault();
+        this.setState({phone_number: '9988776655', password: 'password'})
+        setTimeout( () => {
+            const user = Object.assign({}, this.state);
+            this.props.processForm(user);
+        }, 2000)
+    }
+
     renderForm() {
         if (this.props.formType === 'signup') {
             return (
@@ -116,6 +127,10 @@ class SessionForm extends React.Component {
             <div className="form-option">
                 <h1>Login to WhatsUpp</h1>
                 {this.renderLogin()}
+                <div className="session-submit">
+                    <input className="submit-btn demo" type="submit" value="Demo Login"
+                    onClick={this.handleDemoLogin} />
+                </div>
                 <p>Don't have an account?  <span>{this.props.navLink}</span></p>
             </div>
         );      
