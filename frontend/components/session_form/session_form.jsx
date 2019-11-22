@@ -109,7 +109,7 @@ class SessionForm extends React.Component {
         setTimeout( () => {
             const user = Object.assign({}, this.state);
             this.props.processForm(user);
-        }, 2000)
+        }, 1000)
     }
 
     renderForm() {
