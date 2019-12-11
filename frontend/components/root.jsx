@@ -4,12 +4,15 @@ import { HashRouter } from 'react-router-dom';
 import { ActionCableProvider } from "react-actioncable-provider";
 
 import App from './App';
-// ws://localhost:3000/cable
-// wss://whatsupp-chat.herokuapp.com/cable
+
+const localhostWebSocket = "ws://localhost:3000/cable";
+const herokuappWebSocket = "wss://whatsupp-chat.herokuapp.com/cable";
+const currWebSocket = window.location.hostname === 'localhost' ? localhostWebSocket : herokuappWebSocket
+
 const Root = ({ store }) => (
 	<Provider store={store}>
 		<HashRouter>
-			<ActionCableProvider url="wss://whatsupp-chat.herokuapp.com/cable">
+			<ActionCableProvider url={currWebSocket}>
 				<App />
 			</ActionCableProvider>
 		</HashRouter>
