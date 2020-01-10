@@ -18,7 +18,6 @@ export default class Contacts extends Component {
 
     openNav() {
         document.querySelector("#mySidenav").style.width = "30%";
-        // document.querySelector(".left-pane").style.width = "0";
     }
 
     update(field) {

@@ -20,7 +20,6 @@ const Greeting = ({ currentUser, logout }) => {
 	);
   const personalGreeting = () => (
     <nav className="nav-right">
-      {/* <span className="nav-item"><h1 >Hi, {currentUser.first_name}!</h1> </span> */}
       <p className="nav-item nav-btn btnl"><button className="submit-button"onClick={logout}>Log Out</button></p>
     </nav>
   );
