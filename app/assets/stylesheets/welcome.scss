@@ -1,13 +1,38 @@
 div.login-box.welcome-container {
-    width: 600px;
+    width: 1200px;
+    margin-top: 350px;
+    height: 800px;
 }
 
 div.welcome-container p {
     color: #55636b;
     text-align: center;
     vertical-align: middle;
-    line-height: 400px;
+    // line-height: 400px;
     color: #55636b;
     font-size: 35px;
     font-weight: 200;
 }
+
+.welcome-content {
+    display: flex;
+
+}
+
+.welcome-content-left {
+    padding-top: 50px;
+}
+.features {
+    margin: 0 50px;
+    font-weight: 300;
+    font-size: 35px
+}
+
+.features2 {
+    margin: 50px;
+    color: #313334;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+
