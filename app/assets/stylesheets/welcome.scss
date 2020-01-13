@@ -16,12 +16,18 @@ div.welcome-container p {
 
 .welcome-content {
     display: flex;
-
+    flex-direction: column;
 }
 
 .welcome-content-left {
     padding-top: 50px;
 }
+
+.welcome-content-right {
+    padding-top: 30px;
+    display: flex;
+}
+
 .features {
     margin: 0 50px;
     font-weight: 300;
@@ -33,6 +39,34 @@ div.welcome-container p {
     color: #313334;
     font-size: 20px;
     font-weight: 300;
+}
+
+.welcome-content-right img {
+    width: 50%;
+    height: auto;
+}
+
+.features3 {
+    margin-top: 100px;
+    margin-left: 150px;
+    align-content: center;
+    vertical-align: middle;
+}
+
+.features3 div {
+    margin: 20px;
+    padding: 20px 40px;
+    border: 1px solid #0c9b86;
+    border-radius: 30px;
+    color: #0c9b86;
+    text-align: center;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.features3 div:hover {
+    cursor: pointer;
+    opacity: 1;
 }
 
 
