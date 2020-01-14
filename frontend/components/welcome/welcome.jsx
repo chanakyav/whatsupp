@@ -13,7 +13,7 @@ const Welcome = () => {
                         Reliable messaging.
                     </div>
                     <div className="features2">  
-                        With WhatsApp, you'll get fast, simple, secure messaging available on phones and PC's all over the world.
+                        With WhatsUpp, you'll get fast, simple, secure messaging available on phones and PC's all over the world.
                     </div>
                 </div>
                 <div className="welcome-content-right">
