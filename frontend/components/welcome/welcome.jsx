@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Welcome = () => {
     return (
@@ -23,9 +24,11 @@ const Welcome = () => {
                             Explore Features
                         </div>
 
-                        <div>
-                            Try Now!
-                        </div>
+                        <Link to="/signup">
+                            <div>
+                                Try Now!
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>
