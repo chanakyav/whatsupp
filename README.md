@@ -7,5 +7,11 @@
 
 ## Features
 
-## Technologies Used
-
+## Technologies/Languages
+- Ruby on Rails
+- JavaScript
+- React.js
+- Redux.js
+- PostgreSQL
+- HTML
+- CSS
